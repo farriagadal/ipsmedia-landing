@@ -1,22 +1,11 @@
 .container {
-  width: 100%;
+  width: calc(100% - 40px);
   margin-right: auto;
   margin-left: auto;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px
-  }
+  padding: 0 20px;
 }
 
 @media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1280px) {
   .container {
     max-width: 1110px;
   }
