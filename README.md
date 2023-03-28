@@ -1,4 +1,9 @@
-# ipsmedia-landing
+# IPS Landing (Vue 3)
+
+![](https://i.imgur.com/LiMHN5K.png)
+
+Live: [https://ipsmedia-landing.vercel.app/](https://ipsmedia-landing.vercel.app/)
+
 
 ## Project setup
 ```
