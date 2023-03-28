@@ -1,6 +1,10 @@
 <template>
   <div class="slider" :style="cssVars">
-    <img class="slider__shadow" src="../assets/images/ambient-background.png" alt="phone">
+    <img class="slider__shadow" :srcset="`${items[currentSlide].src1},
+      ${items[currentSlide].src2} 2x,
+      ${items[currentSlide].src3} 3x`"
+      :alt="items[currentSlide].alt"
+    >
     <img class="slider__bg" src="../assets/images/iPhone-mokup.svg" alt="phone">
     <Splide
       ref="splide"
@@ -176,8 +180,23 @@ export default {
 
   &__shadow {
     position: absolute;
-    top: -170px;
-    left: -200px;
+    right: 0;
+    bottom: 0;
+    filter: blur(70px);
+    opacity: 0.2;
+    /* transform: scale(1); */
+    height: 105%;
+    width: 115%;
+    animation: appear 2s ease-in-out;
+
+    @keyframes appear {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.2;
+      }
+    }
   }
 
   &__pagination {
