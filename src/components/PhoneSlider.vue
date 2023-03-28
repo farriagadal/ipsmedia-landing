@@ -95,7 +95,8 @@ export default {
         rewind: true,
         drag: true,
         dragMinThreshold: 200,
-        flickPower: 50
+        flickPower: 50,
+        dragPropagation: true
       },
       currentSlide: 0,
     }
