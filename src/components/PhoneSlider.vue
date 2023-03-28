@@ -128,8 +128,7 @@ export default {
   height: 695px;
   margin-bottom: 120px;
   margin-top: -145px;
-  position: absolute;
-  right: 0;
+  position: relative;
 
   @media screen and (max-width: 768px) {
     margin: 25px auto 120px auto;
@@ -181,14 +180,14 @@ export default {
 
   &__shadow {
     position: absolute;
-    right: 50px;
-    bottom: 50px;
+    right: 0;
+    bottom: 0;
     filter: blur(70px);
     opacity: 0.2;
-    height: 100%;
-    width: 100%;
-    transform: scaleX(1.05) scaleY(1.1);
-    animation: appear 2s ease-in-out;
+    /* transform: scale(1); */
+    height: 105%;
+    width: 115%;
+    animation: appear 1s ease-in-out;
 
     @keyframes appear {
       0% {
