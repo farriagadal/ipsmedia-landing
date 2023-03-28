@@ -19,6 +19,10 @@ div {
   @media (max-width: 768px) {
     margin-top: 40px;
     margin-bottom: 120px;
+
+    img {
+      display: none;
+    }
   }
 }
 </style>
