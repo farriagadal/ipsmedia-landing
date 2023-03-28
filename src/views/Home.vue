@@ -36,6 +36,8 @@ export default {
 
   &__text {
     margin-right: auto;
+    position: relative;
+    z-index: 1;
   }
 }
 </style>
