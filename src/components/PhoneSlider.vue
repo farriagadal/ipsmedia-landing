@@ -128,7 +128,8 @@ export default {
   height: 695px;
   margin-bottom: 120px;
   margin-top: -145px;
-  position: relative;
+  position: absolute;
+  right: 0;
 
   @media screen and (max-width: 768px) {
     margin: 25px auto 120px auto;

@@ -29,6 +29,7 @@ export default {
 <style scoped lang="scss">
 .home {
   display: flex;
+  position: relative;
 
   @media screen and (max-width: 768px) {
     display: block;
