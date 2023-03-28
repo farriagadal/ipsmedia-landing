@@ -9,7 +9,10 @@
       @splide:move="onChange"
     >
       <SplideSlide v-for="item in items" :key="item.id">
-        <img :src="item.src" :alt="item.alt">
+        <img :srcset="`${item.src1},
+            ${item.src2} 2x,
+            ${item.src3} 3x`"
+            :alt="item.alt">
       </SplideSlide>
     </Splide>
     <img
@@ -50,22 +53,30 @@ export default {
     return {
       items: [
         {
-          src: require('../assets/images/carousel-photo-01.jpg'),
+          src1: require('../assets/images/carousel-photo-01.jpg'),
+          src2: require('../assets/images/carousel-photo-01@2x.jpg'),
+          src3: require('../assets/images/carousel-photo-01@3x.jpg'),
           smallPhoto: require('../assets/images/small-carousel-photo-01.jpg'),
           alt: 'Sample 1',
         },
         {
-          src: require('../assets/images/carousel-photo-02.jpg'),
+          src1: require('../assets/images/carousel-photo-02.jpg'),
+          src2: require('../assets/images/carousel-photo-02@2x.jpg'),
+          src3: require('../assets/images/carousel-photo-02@3x.jpg'),
           smallPhoto: require('../assets/images/small-carousel-photo-02.jpg'),
           alt: 'Sample 2',
         },
         {
-          src: require('../assets/images/carousel-photo-03.jpg'),
+          src1: require('../assets/images/carousel-photo-03.jpg'),
+          src2: require('../assets/images/carousel-photo-03@2x.jpg'),
+          src3: require('../assets/images/carousel-photo-03@3x.jpg'),
           smallPhoto: require('../assets/images/small-carousel-photo-03.jpg'),
           alt: 'Sample 3',
         },
         {
-          src: require('../assets/images/carousel-photo-04.jpg'),
+          src1: require('../assets/images/carousel-photo-04.jpg'),
+          src2: require('../assets/images/carousel-photo-04@2x.jpg'),
+          src3: require('../assets/images/carousel-photo-04@3x.jpg'),
           smallPhoto: require('../assets/images/small-carousel-photo-04.jpg'),
           alt: 'Sample 4',
         },
@@ -77,6 +88,7 @@ export default {
         pagination: false,
         arrows: false,
         type: 'fade',
+        rewind: true,
         drag: true,
         dragMinThreshold: 200,
         flickPower: 50
@@ -120,13 +132,15 @@ export default {
 
   &__bg {
     position: absolute;
-    transform: scaleY(0.99);
+    transform: scale(0.99);
   }
 
   &__small {
+    width: 40px;
+    height: 40px;
     position: absolute;
     bottom: 77px;
-    left: 26px;
+    left: 28px;
     transform: scale(1.05);
     cursor: pointer;
     border-radius: 3px;
