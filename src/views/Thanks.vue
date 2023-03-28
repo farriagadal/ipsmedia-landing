@@ -26,6 +26,16 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  animation: appear 1s ease-in-out;
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 
   h1 {

@@ -100,6 +100,7 @@ export default {
       width: stretch;
       padding: 25px 16px 15px 16px;
       color: #EEECEC;
+      transition: 0.3s;
 
       &:focus {
         outline: none;
