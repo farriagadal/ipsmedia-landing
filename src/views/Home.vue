@@ -1,4 +1,5 @@
 <template>
+  <NavBar />
   <div class="container home">
     <div class="home__text">
       <HeroSection />
@@ -12,13 +13,15 @@
 import ContactForm from '@/components/ContactForm.vue';
 import HeroSection from '@/components/HeroSection'
 import PhoneSlider from '@/components/PhoneSlider.vue';
+import NavBar from '@/components/NavBar.vue';
 
 export default {
   name: 'HomeView',
   components: {
     HeroSection,
     ContactForm,
-    PhoneSlider
+    PhoneSlider,
+    NavBar
 }
 }
 </script>
