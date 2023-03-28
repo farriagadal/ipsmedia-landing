@@ -18,6 +18,17 @@
       @click="$event => $refs.splide.go(previousSlide)"
       alt="phone"
     >
+    <div class="slider__pagination">
+      <button
+        :class="{
+          'is-active': index === currentSlide,
+          'is-old':  currentSlide > index,
+        }"
+        v-for="(item, index) in items"
+        :key="index"
+        @click="$event => $refs.splide.go(index)"
+      ></button>
+    </div>
     <button
       class="slider__nextBtn"
       @click="$event => $refs.splide.go(nextSlide)"
@@ -62,8 +73,10 @@ export default {
       options: {
         autoplay: true,
         interval: 8000,
+        speed: 2000,
+        pagination: false,
         arrows: false,
-        type: 'loop',
+        type: 'fade',
         drag: true,
         dragMinThreshold: 200,
         flickPower: 50
@@ -97,11 +110,12 @@ export default {
 .slider {
   width: 335px;
   height: 695px;
+  margin-bottom: 120px;
   margin-top: -145px;
   position: relative;
 
   @media screen and (max-width: 768px) {
-    margin: 25px auto 0 auto;
+    margin: 25px auto 120px auto;
   }
 
   &__bg {
@@ -151,42 +165,69 @@ export default {
     top: -170px;
     left: -200px;
   }
+
+  &__pagination {
+    position: absolute;
+    bottom: -30px;
+    display: grid;
+    grid-template-columns: repeat(var(--n-items), 1fr);
+    gap: 8px;
+    padding: 0 45px;
+    width: calc(100% - 92px);
+
+    button {
+      height: 1px;
+      background: #3A3A3A;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      position: relative;
+
+      &.is-active, &.is-old {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 2px;
+          background: #EEECEC;
+          opacity: 1;
+          top: 0;
+          left: 0;
+        }
+      }
+      &.is-active {
+        &::before {
+          animation: progress 8s linear;
+        }
+      }
+      &.is-old {
+        &::before {
+          animation: none;
+        }
+      }
+      @keyframes progress {
+        from {transform: translateX(-50%) scaleX(0)}
+        to {transform: translateX(0) scaleX(1)}
+      }
+    }
+  }
 }
 
 .splide {
   height: 100%;
-}
 
-.splide__slide {
-  text-align: center;
-  margin-top: 117px;
-}
+  &__track {
+    width: 306px;
+    margin-left: 15px;
+    margin-top: 117px;
+    position: absolute;
+    background: black;
 
-.splide__track {
-  width: 306px;
-  margin-left: 15px;
-
-  img {
-    cursor: pointer;
-  }
-}
-
-.splide__pagination  {
-  position: absolute;
-  bottom: -30px;
-  display: grid;
-  grid-template-columns: repeat(var(--n-items), 1fr);
-  gap: 8px;
-  padding: 0 45px;
-}
-
-.splide__pagination__page {
-  height: 1px;
-  background: #3A3A3A;
-  width: 100%;
-
-  &.is-active {
-    transform: none;
+    img {
+      cursor: pointer;
+    }
   }
 }
 </style>
