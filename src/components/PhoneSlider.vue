@@ -187,6 +187,16 @@ export default {
     /* transform: scale(1); */
     height: 105%;
     width: 115%;
+    animation: appear 2s ease-in-out;
+
+    @keyframes appear {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.2;
+      }
+    }
   }
 
   &__pagination {
