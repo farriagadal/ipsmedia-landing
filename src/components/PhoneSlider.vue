@@ -96,13 +96,12 @@ export default {
 <style lang="scss">
 .slider {
   width: 335px;
-  /* width: calc(335px - 20px); */
   height: 695px;
   margin-top: -145px;
   position: relative;
 
   @media screen and (max-width: 768px) {
-    margin-top: 40px;
+    margin: 25px auto 0 auto;
   }
 
   &__bg {
@@ -125,7 +124,6 @@ export default {
   }
 
   &__nextBtn {
-    /* border: solid; */
     border: none;
     background: none;
     cursor: pointer;

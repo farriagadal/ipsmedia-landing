@@ -41,11 +41,22 @@ h1 {
   color: #EEECEC;
   margin: 0;
   margin-top: 25px;
+
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 
 p {
   font-size: 22px;
   line-height: 30px;
   color: #EEECEC;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+    line-height: 30px;
+  }
 }
 </style>
