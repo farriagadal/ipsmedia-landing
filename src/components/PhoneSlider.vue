@@ -180,13 +180,13 @@ export default {
 
   &__shadow {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 50px;
+    bottom: 50px;
     filter: blur(70px);
     opacity: 0.2;
-    /* transform: scale(1); */
-    height: 105%;
-    width: 115%;
+    height: 100%;
+    width: 100%;
+    transform: scaleX(1.05) scaleY(1.1);
     animation: appear 2s ease-in-out;
 
     @keyframes appear {
